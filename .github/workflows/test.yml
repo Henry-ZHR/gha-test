@@ -16,5 +16,5 @@ jobs:
           make
           sudo make install
       - run: |
-          curl https://archive.archlinux.org/packages/y/yaml-cpp/yaml-cpp-0.7.0-2-x86_64.pkg.tar.zst -o pkg.tar.zst
+          curl https://archive.archlinux.org/packages/y/yaml-cpp/yaml-cpp-0.8.0-1-x86_64.pkg.tar.zst -o pkg.tar.zst
           archlinux-repro pkg.tar.zst
