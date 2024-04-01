@@ -12,6 +12,7 @@ jobs:
           path: archlinux-repro
       - working-directory: archlinux-repro
         run: |
+          sudo apt install -y asciidoc
           make
           sudo make install
       - run: |
