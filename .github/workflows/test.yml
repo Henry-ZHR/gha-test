@@ -5,4 +5,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: ps -efl
+      - uses: actions/checkout@v4
+        with:
+          repository: archlinux/archlinux-repro
+          ref: 20240216
+          path: archlinux-repro
+      - working-directory: archlinux-repro
+        run: |
+          make
+          sudo make install
+      - run: |
+          curl https://archive.archlinux.org/packages/y/yaml-cpp/yaml-cpp-0.7.0-2-x86_64.pkg.tar.zst -o pkg.tar.zst
+          archlinux-repro pkg.tar.zst
