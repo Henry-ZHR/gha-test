@@ -12,9 +12,10 @@ jobs:
           path: archlinux-repro
       - working-directory: archlinux-repro
         run: |
-          sudo apt install -y asciidoc systemd-container
+          sudo apt install -y asciidoc systemd-container tree
           make
           sudo make install
       - run: |
           curl https://archive.archlinux.org/packages/y/yaml-cpp/yaml-cpp-0.8.0-1-x86_64.pkg.tar.zst -O
           archlinux-repro *.pkg.tar.zst
+      - run: tree
