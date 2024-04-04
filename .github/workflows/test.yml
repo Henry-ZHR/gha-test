@@ -7,4 +7,6 @@ jobs:
     steps:
       - run: df -h
       - run: ps -ef
+      - run: free -h
+      - run: sudo cat /proc/swaps
       - run: sudo bash -c 'echo $PATH'
