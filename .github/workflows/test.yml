@@ -5,5 +5,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: dpkg-query -Wf '${Installed-Size}\t${Package}\n' | sort -n
-      - run: echo "$PATH"
+      - run: df -h
+      - run: ps -ef
+      - run: sudo bash -c 'echo $PATH'
